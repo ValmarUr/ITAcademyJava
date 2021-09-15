@@ -1,6 +1,6 @@
 package n3;
 
-public class N3 {
+public class M2N3 {
 
 	public static void main(String[] args) {
 		

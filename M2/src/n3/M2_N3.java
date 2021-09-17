@@ -1,6 +1,15 @@
+/*
+ * IT ACADEMY -- Itinerari mentoritzat JAVA
+ * 
+ * 		MODUL 2: Nivell 3
+ * 
+ * 		Alumne: Juan Emilio Fernández Reinaldos
+ * 
+ */
+
 package n3;
 
-public class M2N3 {
+public class M2_N3 {
 
 	public static void main(String[] args) {
 		
@@ -9,7 +18,7 @@ public class M2N3 {
 		while(true) {
 			
 			try {
-				Thread.sleep(50);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -27,7 +36,7 @@ public class M2N3 {
 				hour = 0;
 			}
 			
-			//System.out.println(hour + ":" + minutes + ":" + seconds);
+			
 			System.out.printf("%02d:%02d:%02d\n", hour, minutes, seconds);
 			
 			seconds++;

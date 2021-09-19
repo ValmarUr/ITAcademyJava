@@ -25,7 +25,7 @@ public class M2_N1F2 {
 		llista.add('m');
 		llista.add('i');
 		llista.add('l');
-		llista.add('1');
+		llista.add('1'); //escrit malament per demostrar el resultat en cas d'error
 		llista.add('o');
 		
 		

@@ -9,17 +9,28 @@
 
 package n1;
 
+import java.util.Scanner;
+
 public class M3_N1F1 {
 
 	public static void main(String[] args) {
 		
-		char[] nom = {'J','u','a','n',' ','E','m','i','l','i','o'};
+		Scanner sc = new Scanner(System.in);
 		
-		for(int i = 0; i < nom.length; i++) {
-			
-			System.out.println(nom[i]);
-			
-		}
+		String ciutat1, ciutat2, ciutat3, ciutat4, ciutat5, ciutat6;
+		
+		System.out.println("Introdueix el nom de 6 ciutats:");
+		
+		ciutat1 = sc.nextLine();
+		ciutat2 = sc.nextLine();
+		ciutat3 = sc.nextLine();
+		ciutat4 = sc.nextLine();
+		ciutat5 = sc.nextLine();
+		ciutat6 = sc.nextLine();
+		
+		System.out.println(ciutat1 + ", " + ciutat2 + ", " + ciutat3 + ", " + ciutat4 +", " + ciutat5 + ", " + ciutat6);
+		
+		sc.close();
 		
 	}
 

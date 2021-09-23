@@ -13,15 +13,7 @@ public class M4_N1F1 {
 
 	public static void main(String[] args) {
 		
-		int moneda1€ = 1;
-		int moneda2€ = 2;
-		int bitllet5€ = 5;
-		int bitllet10€ = 10;
-		int bitllet20€ = 20;
-		int bitllet50€ = 50;
-		int bitllet100€ = 100;
-		int bitllet200€ = 200;
-		int bitllet500€ = 500;
+		int m1, m2, b5, b10, b20, b50, b100, b200, b500;
 		int preuTotal = 0;
 		
 		String[] plats = new String[10];

@@ -18,44 +18,31 @@ public class M4_N1F2 {
 
 	public static void main(String[] args) {
 		
-		int moneda1€ = 1;
-		int moneda2€ = 2;
-		int bitllet5€ = 5;
-		int bitllet10€ = 10;
-		int bitllet20€ = 20;
-		int bitllet50€ = 50;
-		int bitllet100€ = 100;
-		int bitllet200€ = 200;
-		int bitllet500€ = 500;
+		//FASE 1
+		int m1, m2, b5, b10, b20, b50, b100, b200, b500;
 		int preuTotal = 0;
 		
 		String[] plats = new String[10];
 		int[] preus = new int[10];
 		
+		
+		//FASE 2
 		HashMap<String, Integer> preuPlat = new HashMap<String, Integer>();
 		
-		preuPlat.put("Bufalina", 12);
-		preuPlat.put("4 Formaggi", 12);
-		preuPlat.put("Pino Daniele", 18);
-		preuPlat.put("Margherita", 9);
-		preuPlat.put("Prosciutto", 10);
-		preuPlat.put("Parmiggiana", 11);
-		preuPlat.put("Al Tonno", 13);
-		preuPlat.put("Carbonara", 11);
-		preuPlat.put("Massimo Troise", 17);
-		preuPlat.put("Ortolana", 12);
+		omplirMap(preuPlat); //diccionari de dades precarregat
 		
+		//omplir els 2 arrays amb les dades del diccionari
 		int counter = 0;
 		
 		for(Entry<String, Integer> entry : preuPlat.entrySet()) {
 			
 			plats[counter] = entry.getKey();
 			preus[counter] = entry.getValue();
-			counter++;
-			
+			counter++;	
 		}
 		
-		System.out.println("-------MENÚ-------");
+		//mostrar els arrays en forma de menú
+		System.out.println("-------MENÚ-------"); 
 		
 		for(int i = 0; i < plats.length; i++) {
 			
@@ -63,19 +50,53 @@ public class M4_N1F2 {
 			
 		}
 		
+		//demanar menjar al client
+		ArrayList<String> comanda = new ArrayList<String>();
+		
+		prendreComanda(comanda);
+
+	}//end main
+	
+	
+	//MÈTODES
+	public static void omplirMap(HashMap<String, Integer> hm) {
+		
+		hm.put("Bufalina", 12);
+		hm.put("4 Formaggi", 12);
+		hm.put("Pino Daniele", 18);
+		hm.put("Margherita", 9);
+		hm.put("Prosciutto", 10);
+		hm.put("Parmiggiana", 11);
+		hm.put("Al Tonno", 13);
+		hm.put("Carbonara", 11);
+		hm.put("Massimo Troise", 17);
+		hm.put("Ortolana", 12);
+		
+	}
+	
+	public static void prendreComanda(ArrayList<String> llista) {
+		
 		Scanner sc = new Scanner(System.in);
 		
-		ArrayList<String> comanda = new ArrayList<String>();
+		int seguirDemanant = 0;
 		
 		do {
 			
-			System.out.println("Que vols menjar?");
+			System.out.println("\nQue vols menjar?");
 			
+			String triaPlat = sc.nextLine();
 			
+			llista.add(triaPlat);
 			
+			System.out.println("Vols seguir demanant? 1:Si/0:No");
 			
-		}while(1);
+			seguirDemanant = sc.nextInt();
+			
+			sc.nextLine(); //problema típic amb classe Scanner
+			
+		}while(seguirDemanant == 1);
 		
+		sc.close();
 		
 	}
 

@@ -16,7 +16,7 @@ import java.util.Map.Entry;
 
 public class M4_N1F3 {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		//FASE 1
 		int m1, m2, b5, b10, b20, b50, b100, b200, b500;
@@ -54,7 +54,6 @@ public static void main(String[] args) {
 		ArrayList<String> comanda = new ArrayList<String>();
 		
 		prendreComanda(comanda);
-		
 
 		
 		//FASE 3
@@ -69,14 +68,11 @@ public static void main(String[] args) {
 					preuTotal += preus[i];
 					coincideix = true;
 					break;
-					
 				}
-				
 			}
 			
 			if(!coincideix) {
 				System.out.println("\"" + str + "\" no existeix.");
-
 			}
 		}
 		
@@ -126,16 +122,12 @@ public static void main(String[] args) {
 			m1 = preuTotal/1;
 			System.out.println(m1 + (m1>1?" monedes":" moneda") +" de 1 ");
 			preuTotal %= 1;
-		}
-			
-		
-//		if(!comanda.isEmpty()) {
-//		
+		}		
 
-		
 	}//end main
 	
 	
+	//MÈTODES
 	public static void omplirMap(HashMap<String, Integer> hm) {
 		
 		hm.put("Bufalina", 12);
@@ -173,20 +165,10 @@ public static void main(String[] args) {
 			
 			System.out.println();
 			
-			
-//			for(int i = 0; i < plats.length; i++) {
-//				if(tria.equals(plats[i])) {
-//					System.out.println("Anotat!");
-//				}else {
-//					System.out.println();
-//				}
-//			}
-			
 		}while(seguirDemanant == 1);
 		
 		sc.close();
 		
-	}//end predreComanda
+	}//end prendreComanda
 	
-
 }

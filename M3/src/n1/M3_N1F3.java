@@ -27,7 +27,7 @@ public class M3_N1F3 {
 		
 		System.out.println("Ciutats modificades per ordre alfabètic:");
 		
-		for(int i = 0; i < arrayCiutats.length; i++) {
+		for(int i = 0; i < arrayCiutats.length; i++){
 			
 			arrayCiutatsModificades[i] = arrayCiutats[i].replace('a', '4');
 			

@@ -49,6 +49,7 @@ public class M4_N1F2 {
 			System.out.println("· " + plats[i] + " = " + preus[i] + "€");
 			
 		}
+		System.out.println();
 		
 		//demanar menjar al client
 		ArrayList<String> comanda = new ArrayList<String>();
@@ -82,7 +83,7 @@ public class M4_N1F2 {
 		
 		do {
 			
-			System.out.println("\nQue vols menjar?");
+			System.out.println("Que vols menjar?");
 			
 			String triaPlat = sc.nextLine();
 			
@@ -94,10 +95,12 @@ public class M4_N1F2 {
 			
 			sc.nextLine(); //problema típic amb classe Scanner
 			
+			System.out.println();
+			
 		}while(seguirDemanant == 1);
 		
 		sc.close();
 		
-	}
+	}//end prendreComanda
 
 }

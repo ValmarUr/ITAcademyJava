@@ -53,8 +53,49 @@ public static void main(String[] args) {
 		//demanar menjar al client
 		ArrayList<String> comanda = new ArrayList<String>();
 		
-		prendreComanda(comanda);
-
+		
+		//NIVELL 2
+		Scanner sc = new Scanner(System.in);
+		
+		boolean seguirDemanant = false;
+		
+		do {
+			
+			System.out.println("Que vols menjar?");
+			
+			String triaPlat = sc.nextLine();
+			
+			//verificant que el plat demanat existeixi, executant una excepció en cas contrari
+			try {
+				verificarPlat(plats, triaPlat, comanda);
+			}catch(Exception e) {
+				
+				System.out.println("El plat no existeix");
+				
+			}
+			
+			//verificant si la resposta a "seguir demanant" és corrrecta
+			boolean respostaOK = false; 
+			
+			while(!respostaOK) {
+				
+				System.out.println("Vols seguir demanant? Si/No");
+				
+				try {
+					seguirDemanant = verificarSiNo(sc.nextLine());
+					respostaOK = true;
+				}catch (Exception e) {
+					
+					System.out.println("Resposta incorrecta! Escriu (si) o (no)");
+				}
+			}
+			
+			System.out.println();
+			
+		}while(seguirDemanant);
+		
+		sc.close();
+		
 		
 		//FASE 3
 		for(String str : comanda) {
@@ -143,32 +184,35 @@ public static void main(String[] args) {
 		
 	}
 	
-	public static void prendreComanda(ArrayList<String> llista) {
+	public static void verificarPlat(String[] menu, String triaPlat, ArrayList<String> comanda) throws Exception {
 		
-		Scanner sc = new Scanner(System.in);
+		for(String plat : menu) {
+			
+			if(plat.equalsIgnoreCase(triaPlat)) {
+				
+				comanda.add(triaPlat);
+				return;
+			}
+			
+		}
 		
-		int seguirDemanant = 0;
+		throw new Exception();
 		
-		do {
-			
-			System.out.println("Que vols menjar?");
-			
-			String triaPlat = sc.nextLine();
-			
-			llista.add(triaPlat);
-			
-			System.out.println("Vols seguir demanant? 1:Si/0:No");
-			
-			seguirDemanant = sc.nextInt();
-			
-			sc.nextLine(); //problema típic amb classe Scanner
-			
-			System.out.println();
-			
-		}while(seguirDemanant == 1);
+	}//end verificarPlat
+	
+	
+	public static boolean verificarSiNo(String resposta) throws Exception {
 		
-		sc.close();
-		
-	}//end prendreComanda
+		if(resposta.equalsIgnoreCase("si")) {
+			return true;
+			
+		}else if(resposta.equalsIgnoreCase("no")) {
+			return false;
+			
+		}else {
+			throw new Exception();
+			
+		}	
+	}//end verificarSiNo
 	
 }

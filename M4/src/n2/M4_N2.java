@@ -16,7 +16,7 @@ import java.util.Map.Entry;
 
 public class M4_N2 {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		//FASE 1
 		int m1, m2, b5, b10, b20, b50, b100, b200, b500;
